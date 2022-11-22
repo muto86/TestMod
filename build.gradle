@@ -5,6 +5,11 @@ buildscript{
         classpath "com.android.tools.build:gradle:7.2.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'//上传maven center仓库插件
+        // Kotlin Javadoc，非必须
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.6.20"
+        //1、依赖抓包插件库
+        classpath 'io.github.lucasxu01:modular-networkviewer-plugin:0.0.1'
 
 
     }

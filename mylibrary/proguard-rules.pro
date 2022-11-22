@@ -17,3 +17,8 @@
 -keep interface repeackage.com.android.creator.** { *; }
 -keep class repeackage.com.google.android.gms.ads.identifier.internal.** { *; }
 -keep interface repeackage.com.google.android.gms.ads.identifier.internal.* { *; }
+
+-keep class com.xiaoju.mylibrary.http.** { *; }
+-keep class com.xiaoju.mylibrary.oaidsystem.** { *; }
+-keep class com.xiaoju.mylibrary.utils.** { *; }
+-keep class com.xiaoju.mylibrary.** { *; }

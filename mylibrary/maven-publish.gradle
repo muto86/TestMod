@@ -1,0 +1,58 @@
+// 必备插件
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+
+afterEvaluate {// components.release 只有在配置完成之后，才能拿到值
+    publishing {
+
+        // 配置maven 仓库
+        repositories {
+            maven {
+                // isAllowInsecureProtocol = true // 如果Maven仓库仅支持http协议, 请打开此注释
+
+                //https://s01.oss.sonatype.org/content/repositories/snapshots/
+                url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") // 请填入你的仓库地址
+                credentials {
+                    username = "muto86" // 请填入你的用户名
+                    password = "Dgnt.13077802451" // 请填入你的密码
+                }
+            }
+        }
+
+        publications { PublicationContainer publicationContainer ->
+            maven(MavenPublication) {
+                from components.release // 注释1:使用 Android Gradle 插件生成的组件，作为发布的内容
+                //artifact sourceJar // 上传源码
+                groupId = "io.github.muto86"
+                artifactId = "Analysisoffactors"
+                version = "0.0.3-snapshots"
+                description = "测试库"
+                pom {
+                    name.set("name") // (可选)为工件取一个名字
+                    url.set("https://xxx") // (可选)网站地址
+                    developers {
+                        developer {
+                            name=("name") // (可选)开发者名称
+                            email=("email") // (可选)开发者邮箱
+                        }
+                    }
+                    licenses {
+                        //证书说明
+                        license {
+                            name = 'xxx.'
+                            url = 'null'
+                        }
+                    }
+                    //软件配置管理
+                    scm {
+                        connection = 'xxx'
+                        developerConnection = 'xxx'
+                        url = 'xxx'
+                    }
+                }
+            }
+        }
+    }
+}
+

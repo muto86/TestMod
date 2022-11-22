@@ -5,6 +5,13 @@ pluginManagement {
         mavenCentral()
         maven { url 'https://dl.openmediation.com/omcenter/' }
         maven { url 'https://www.jitpack.io' }
+        // release 中央仓库
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/releases'}
+        // snapshot 中央仓库
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
+        // 暂存库，用于验证
+        maven { url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"}
+
     }
 }
 dependencyResolutionManagement {
@@ -14,9 +21,15 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url 'https://dl.openmediation.com/omcenter/' }
         maven { url 'https://www.jitpack.io' }
+        // release 中央仓库
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/releases'}
+        // snapshot 中央仓库
+        maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'}
+        // 暂存库，用于验证
+        maven { url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"}
+
     }
 }
 rootProject.name = "TestMod"
 include ':app',"mylibrary"
 
-include ':guiyin'
