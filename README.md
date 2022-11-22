@@ -6,7 +6,14 @@ implementation 'io.github.muto86:AnalysisofFactorsSDK:0.0.5'
 
 network_security_config.xml
 
+
  <?xml version="1.0" encoding="utf-8"?>
+ 
+ 
  <network-security-config>
+ 
+ 
     <base-config cleartextTrafficPermitted="true" />
+    
+    
  </network-security-config>
